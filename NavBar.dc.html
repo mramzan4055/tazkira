@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js" defer></script>
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,500;0,600;0,700;1,600&display=swap" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,500;0,600;0,700;1,600&display=swap" />
+
+  
+  <link rel="canonical" href="https://tazkirahonline.com/NavBar.html">
+  <meta property="og:title" content="Online Quran & Arabic Classes | Tazkirah">
+  <meta property="og:description" content="Learn Quran, Tajweed, and Arabic online with certified Sanad teachers. 1-on-1 live classes for kids & adults.">
+  <meta property="og:url" content="https://tazkirahonline.com/NavBar.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tazkirah Online Education">
+  <meta property="og:image" content="https://tazkirahonline.com/assets/hero-bg.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Online Quran & Arabic Classes | Tazkirah">
+  <meta name="twitter:description" content="Learn Quran, Tajweed, and Arabic online with certified Sanad teachers. 1-on-1 live classes for kids & adults.">
+  <meta name="twitter:image" content="https://tazkirahonline.com/assets/hero-bg.webp">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "@id": "https://tazkirahonline.com/#organization",
+  "name": "Tazkirah Online Education",
+  "url": "https://tazkirahonline.com",
+  "logo": "https://tazkirahonline.com/assets/hero-bg.webp",
+  "description": "Premier online Quran & Arabic academy offering 1-on-1 live classes with certified Sanad teachers for kids and adults globally.",
+  "sameAs": [
+    "https://facebook.com/tazkirahonline",
+    "https://instagram.com/tazkirahonline",
+    "https://twitter.com/tazkirahonline"
+  ],
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": [
+      "English",
+      "Arabic"
+    ]
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://tazkirahonline.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Online Quran & Arabic Classes",
+      "item": "https://tazkirahonline.com/NavBar.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/tazkirah-design-system-bcbab7c6-6e80-4073-a41d-d66b93b5f566/styles.css">
+  <script src="_ds/tazkirah-design-system-bcbab7c6-6e80-4073-a41d-d66b93b5f566/_ds_bundle.js" defer></script>
+  <style>
+    /* ============ Tazkirah NavBar v2 — editorial, quiet, institutional ============ */
+    .tz-utility-bar{display:flex;justify-content:center;align-items:center;gap:32px;background:var(--teal-900);color:var(--cream-100);font:500 12px/1.4 var(--font-sans);letter-spacing:var(--tracking-wide);padding:8px 16px;min-height:32px;box-sizing:border-box;overflow:hidden;margin:0}
+    .tz-utility-bar a{color:var(--teal-200);text-decoration:none;transition:color var(--transition-fast)}
+    .tz-utility-bar a:hover{color:var(--cream-50)}
+
+    .tz-header{
+      position:sticky;top:0;z-index:60;
+      background:color-mix(in srgb,var(--surface-card) 92%,transparent);
+      border-bottom:1px solid var(--border-hairline);
+      transition:box-shadow var(--transition-base),background-color var(--transition-base);
+    }
+    .tz-header.is-scrolled{background:var(--surface-card);box-shadow:var(--shadow-sm)}
+    .tz-header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:var(--container-max);margin:0 auto;padding:16px 24px}
+    /* Flex order: brand(1) nav(2) cta(3) hamburger(4) — DOM order differs to avoid runtime re-parenting of trailing siblings */
+    .tz-brand{order:1}
+    .tz-nav{order:2}
+    .tz-header-cta{order:3}
+    .tz-hamburger{order:4}
+
+    .tz-brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+    .tz-brand-mark{height:44px;width:auto;display:block;border-radius:var(--radius-sm)}
+    .tz-brand-word{font:700 22px/1 var(--font-serif);color:var(--teal-900);letter-spacing:-0.01em;transition:color var(--transition-fast)}
+    .tz-brand:hover .tz-brand-word{color:var(--teal-700)}
+
+    /* Desktop nav */
+    .tz-nav{display:flex;align-items:center;gap:4px;flex-shrink:1;min-width:0}
+    .tz-nav a{position:relative;font:600 14px var(--font-sans);color:var(--text-secondary);text-decoration:none;padding:8px 12px;white-space:nowrap;transition:color var(--transition-fast)}
+    .tz-nav a:hover{color:var(--teal-900)}
+    .tz-nav a.is-active{color:var(--teal-900)}
+    .tz-nav a.is-active::after{content:"";position:absolute;left:12px;right:12px;bottom:0;height:2px;background:var(--gold-500);border-radius:1px}
+    .tz-nav a:focus-visible{outline:2px solid var(--teal-500);outline-offset:2px;border-radius:var(--radius-sm)}
+
+    .tz-has-mega{position:relative}
+    .tz-has-mega::after{content:"";position:absolute;top:100%;left:-20px;right:-20px;height:24px;z-index:65}
+    .tz-mega-trigger{
+      display:flex;align-items:center;gap:6px;
+      font:600 14px var(--font-sans);color:var(--text-secondary);cursor:pointer;text-decoration:none;
+      padding:8px 12px;background:none;border:0;white-space:nowrap;transition:color var(--transition-fast);
+    }
+    .tz-mega-trigger:hover{color:var(--teal-900)}
+    .tz-mega-trigger.is-active{color:var(--teal-900)}
+    .tz-mega-trigger.is-active::after{content:"";position:absolute;left:12px;right:12px;bottom:0;height:2px;background:var(--gold-500);border-radius:1px}
+    .tz-mega-chevron{font-size:11px;color:var(--ink-300);transition:transform var(--transition-fast)}
+    .tz-has-mega:hover .tz-mega-chevron{transform:rotate(180deg)}
+    .tz-has-mega.is-open .tz-mega-chevron{transform:rotate(180deg)}
+
+    .tz-mega{
+      position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%) translateY(-4px);
+      width:640px;background:var(--surface-card);border:1px solid var(--border-hairline);
+      border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:28px 32px;
+      display:grid;grid-template-columns:repeat(3,1fr);gap:32px;z-index:70;
+      opacity:0;visibility:hidden;pointer-events:none;
+      transition:opacity 0.25s ease 0.15s, visibility 0.25s ease 0.15s, transform 0.25s ease 0.15s;
+    }
+    .tz-has-mega:hover .tz-mega,.tz-has-mega.is-open .tz-mega,.tz-has-mega:focus-within .tz-mega{
+      opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);
+      transition-delay:0s;
+    }
+    .tz-mega-col{min-width:0}
+    .tz-mega-heading{font:700 11px var(--font-sans);text-transform:uppercase;letter-spacing:var(--tracking-micro);color:var(--teal-600);margin:0 0 12px}
+    .tz-mega-links{display:flex;flex-direction:column;gap:2px}
+    .tz-mega-links a{display:block;padding:7px 8px;font:500 14px var(--font-sans);color:var(--text-secondary);text-decoration:none;border-radius:var(--radius-sm);transition:background-color var(--transition-fast),color var(--transition-fast)}
+    .tz-mega-links a:hover{background:var(--teal-50);color:var(--teal-900)}
+    .tz-mega-links a:focus-visible{outline:2px solid var(--teal-500);outline-offset:-1px;border-radius:var(--radius-sm)}
+
+    /* Primary CTA — luxury gold button with explicit contrast protection */
+    .tz-header-cta{
+      display:inline-flex;align-items:center;justify-content:center;
+      font:700 14px/1 var(--font-sans);
+      color:#041B19 !important;
+      background:linear-gradient(135deg, #F3D98B 0%, #C99B43 100%) !important;
+      padding:11px 22px;border-radius:var(--radius-pill);
+      text-decoration:none !important;white-space:nowrap;flex-shrink:0;
+      box-shadow:0 4px 15px rgba(201, 155, 67, 0.3);
+      transition:all var(--transition-fast);
+    }
+    .tz-header-cta:hover{
+      color:#041B19 !important;
+      background:linear-gradient(135deg, #FFE494 0%, #DFB756 100%) !important;
+      transform:translateY(-1px);
+      box-shadow:0 6px 20px rgba(201, 155, 67, 0.45);
+    }
+    .tz-header-cta:focus-visible{outline:2px solid var(--gold-500);outline-offset:2px}
+
+    /* Hamburger */
+    .tz-hamburger{display:none !important;background:none;border:1px solid var(--border-hairline);border-radius:var(--radius-md);padding:10px;cursor:pointer;flex-shrink:0;transition:border-color var(--transition-fast),background-color var(--transition-fast)}
+    .tz-hamburger:hover{border-color:var(--teal-300);background:var(--teal-50)}
+    .tz-hamburger:focus-visible{outline:2px solid var(--teal-500);outline-offset:2px}
+    .tz-hamburger-box{display:block;width:20px;height:14px;position:relative}
+    .tz-hamburger-box span{display:block;position:absolute;left:0;width:100%;height:2px;background:var(--teal-900);border-radius:1px;transition:transform var(--transition-fast),opacity var(--transition-fast),top var(--transition-fast)}
+    .tz-hamburger-box span:nth-child(1){top:0}
+    .tz-hamburger-box span:nth-child(2){top:6px}
+    .tz-hamburger-box span:nth-child(3){top:12px}
+    .tz-hamburger[aria-expanded="true"] .tz-hamburger-box span:nth-child(1){top:6px;transform:rotate(45deg)}
+    .tz-hamburger[aria-expanded="true"] .tz-hamburger-box span:nth-child(2){opacity:0}
+    .tz-hamburger[aria-expanded="true"] .tz-hamburger-box span:nth-child(3){top:6px;transform:rotate(-45deg)}
+
+    /* Mobile drawer */
+    .tz-drawer{
+      position:fixed;inset:0;z-index:100;background:var(--surface-page);
+      flex-direction:column;overflow-y:auto;overscroll-behavior:contain;
+      display:none;
+    }
+    .tz-drawer.is-open{display:flex}
+    .tz-drawer-header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid var(--border-subtle)}
+    .tz-drawer-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .tz-drawer-brand img{height:36px;width:auto;display:block}
+    .tz-drawer-brand span{font:700 19px var(--font-serif);color:var(--teal-900)}
+    .tz-drawer-close{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:none;border:1px solid var(--border-hairline);border-radius:var(--radius-md);color:var(--teal-900);font-size:22px;line-height:1;cursor:pointer;transition:background-color var(--transition-fast),border-color var(--transition-fast)}
+    .tz-drawer-close:hover{background:var(--teal-50);border-color:var(--teal-300)}
+    .tz-drawer-close:focus-visible{outline:2px solid var(--teal-500);outline-offset:2px}
+    .tz-drawer-nav{display:flex;flex-direction:column;padding:12px 24px 32px}
+    .tz-drawer-link{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      font:600 17px var(--font-sans);color:var(--text-primary);text-decoration:none;
+      padding:15px 4px;border-bottom:1px solid var(--border-hairline);
+      transition:color var(--transition-fast);
+    }
+    .tz-drawer-link:hover{color:var(--teal-900)}
+    .tz-drawer-link.is-active{color:var(--teal-900)}
+    .tz-drawer-sub-toggle{display:flex;align-items:center;gap:10px;flex:1}
+    .tz-drawer-chevron{font-size:12px;color:var(--ink-300);transition:transform var(--transition-fast)}
+    .tz-drawer-acc.is-open .tz-drawer-chevron{transform:rotate(180deg)}
+    .tz-drawer-sub{display:none;flex-direction:column;gap:2px;padding:6px 0 14px}
+    .tz-drawer-acc.is-open .tz-drawer-sub{display:flex}
+    .tz-drawer-sub-heading{font:700 11px var(--font-sans);text-transform:uppercase;letter-spacing:var(--tracking-micro);color:var(--teal-600);margin:12px 0 4px}
+    .tz-drawer-sub a{font:500 15px var(--font-sans);color:var(--text-secondary);text-decoration:none;padding:10px 4px;border-radius:var(--radius-sm);transition:background-color var(--transition-fast),color var(--transition-fast)}
+    .tz-drawer-sub a:hover{color:var(--teal-900);background:var(--teal-50)}
+    .tz-drawer-cta{
+      display:block;text-align:center;font:700 16px var(--font-sans);
+      color:#041B19 !important;
+      background:linear-gradient(135deg, #F3D98B 0%, #C99B43 100%) !important;
+      padding:15px 22px;border-radius:var(--radius-pill);
+      text-decoration:none !important;margin-top:20px;
+      box-shadow:0 4px 15px rgba(201, 155, 67, 0.3);
+      transition:all var(--transition-fast);
+    }
+    .tz-drawer-cta:hover{
+      color:#041B19 !important;
+      background:linear-gradient(135deg, #FFE494 0%, #DFB756 100%) !important;
+    }
+    .tz-drawer-wa{
+      display:block;text-align:center;font:700 15px var(--font-sans);color:var(--brand-primary);
+      background:var(--teal-50);padding:13px 22px;border-radius:var(--radius-pill);text-decoration:none;margin-top:12px;
+      transition:background-color var(--transition-fast);
+    }
+    .tz-drawer-wa:hover{background:var(--teal-100)}
+
+    /* Breakpoints */
+    @media (max-width:1080px){.tz-nav{display:none !important}.tz-header-cta{display:none !important}.tz-hamburger{display:inline-flex !important}.tz-utility-bar{display:none !important}}
+    @media (max-width:560px){
+      .tz-header-inner{padding:12px 16px}
+      .tz-brand-mark{height:38px}
+      .tz-brand-word{font-size:20px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .tz-header,.tz-nav a,.tz-header-cta,.tz-hamburger,.tz-hamburger-box span,.tz-mega,.tz-mega-links a,.tz-drawer-link,.tz-drawer-sub a,.tz-drawer-cta,.tz-drawer-wa,.tz-utility-bar a{transition:none !important}
+    }
+  </style>
+</helmet>
+<div>
+  <div class="tz-utility-bar">
+    <a href="https://wa.me/447828702523" target="_blank" rel="noopener">+44 7828 702523</a>
+    <a href="mailto:asktazkirah@gmail.com">asktazkirah@gmail.com</a>
+    <a href="https://wa.me/447828702523" target="_blank" rel="noopener">WhatsApp us</a>
+  </div>
+  <header class="tz-header {{ scrolledCls }}">
+    <div class="tz-header-inner">
+      <a href="free-class.html" class="tz-header-cta">Book a Free Class</a>
+      <button type="button" class="tz-hamburger" onClick="{{ toggleMobileMenu }}" aria-label="{{ menuAriaLabel }}" aria-expanded="{{ mobileMenuOpen }}" aria-controls="tz-mobile-drawer">
+        <span class="tz-hamburger-box"><span></span><span></span><span></span></span>
+      </button>
+      <a href="index.html" class="tz-brand">
+        <img width="120" height="147" src="assets/tazkirah-mark.png" alt="Tazkirah Online Education" class="tz-brand-mark" loading="eager" fetchpriority="high" decoding="async" />
+        <span class="tz-brand-word">Tazkirah</span>
+      </a>
+      <div class="tz-nav" role="navigation" aria-label="Main">
+        <a href="index.html" class="{{ homeCls }}">Home</a>
+        <div class="tz-has-mega {{ coursesWrapCls }}">
+          <a href="courses.html" class="tz-mega-trigger {{ coursesCls }}">
+            Courses <span class="tz-mega-chevron" aria-hidden="true">▾</span>
+          </a>
+          <div class="tz-mega" role="menu">
+            <div class="tz-mega-col" role="none">
+              <div class="tz-mega-heading">Quran</div>
+              <div class="tz-mega-links" role="none">
+                <a href="course-basic-qaida.html" role="menuitem">Basic Qaida</a>
+                <a href="course-quran-recitation.html" role="menuitem">Quran Recitation</a>
+                <a href="course-tajweed.html" role="menuitem">Tajweed Ul Quran</a>
+                <a href="course-hifz.html" role="menuitem">Hifz Programme</a>
+                <a href="course-understand-quran.html" role="menuitem">Understand Quran</a>
+              </div>
+            </div>
+            <div class="tz-mega-col" role="none">
+              <div class="tz-mega-heading">Arabic</div>
+              <div class="tz-mega-links" role="none">
+                <a href="course-arabic-for-beginners.html" role="menuitem">Arabic for Beginners</a>
+                <a href="course-intermediate-arabic.html" role="menuitem">Intermediate Grammar</a>
+                <a href="course-advanced-arabic.html" role="menuitem">Advanced Proficiency</a>
+              </div>
+            </div>
+            <div class="tz-mega-col" role="none">
+              <div class="tz-mega-heading">Islamic Studies</div>
+              <div class="tz-mega-links" role="none">
+                <a href="course-islamic-studies.html" role="menuitem">Kids &amp; Adults</a>
+                <a href="course-new-muslims.html" role="menuitem">New Muslims</a>
+                <a href="course-five-pillars.html" role="menuitem">The 5 Pillars</a>
+                <a href="course-daily-duas.html" role="menuitem">Daily Duas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="teachers.html" class="{{ teachersCls }}">Our Teachers</a>
+        <a href="pricing.html" class="{{ pricingCls }}">Pricing</a>
+        <a href="about.html" class="{{ aboutCls }}">About</a>
+        <a href="faqs.html" class="{{ faqsCls }}">FAQs</a>
+        <a href="contact.html" class="{{ contactCls }}">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <sc-if value="{{ mobileMenuOpen }}">
+    <div id="tz-mobile-drawer" class="tz-drawer is-open" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="tz-drawer-header">
+        <a href="index.html" class="tz-drawer-brand" onClick="{{ closeMobileMenu }}">
+          <img fetchpriority="high" width="120" height="147" src="assets/tazkirah-mark.png" alt="" loading="lazy" decoding="async" />
+          <span>Tazkirah</span>
+        </a>
+        <button type="button" class="tz-drawer-close" onClick="{{ closeMobileMenu }}" aria-label="Close menu">×</button>
+      </div>
+      <nav class="tz-drawer-nav" aria-label="Mobile">
+        <a href="index.html" class="tz-drawer-link {{ homeCls }}" onClick="{{ closeMobileMenu }}">Home</a>
+        <div class="tz-drawer-acc {{ coursesAccCls }}">
+          <button type="button" class="tz-drawer-link" aria-expanded="{{ coursesAccOpen }}" onClick="{{ toggleCoursesAcc }}" style="width:100%;background:none;border:0;cursor:pointer;text-align:left">
+            <span class="tz-drawer-sub-toggle">Courses <span class="tz-drawer-chevron" aria-hidden="true">▾</span></span>
+          </button>
+          <div class="tz-drawer-sub">
+            <div class="tz-drawer-sub-heading">Quran</div>
+            <a href="course-basic-qaida.html" onClick="{{ closeMobileMenu }}">Basic Qaida</a>
+            <a href="course-quran-recitation.html" onClick="{{ closeMobileMenu }}">Quran Recitation</a>
+            <a href="course-tajweed.html" onClick="{{ closeMobileMenu }}">Tajweed Ul Quran</a>
+            <a href="course-hifz.html" onClick="{{ closeMobileMenu }}">Hifz Programme</a>
+            <a href="course-understand-quran.html" onClick="{{ closeMobileMenu }}">Understand Quran</a>
+            <div class="tz-drawer-sub-heading">Arabic</div>
+            <a href="course-arabic-for-beginners.html" onClick="{{ closeMobileMenu }}">Arabic for Beginners</a>
+            <a href="course-intermediate-arabic.html" onClick="{{ closeMobileMenu }}">Intermediate Grammar</a>
+            <a href="course-advanced-arabic.html" onClick="{{ closeMobileMenu }}">Advanced Proficiency</a>
+            <div class="tz-drawer-sub-heading">Islamic Studies</div>
+            <a href="course-islamic-studies.html" onClick="{{ closeMobileMenu }}">Kids &amp; Adults</a>
+            <a href="course-new-muslims.html" onClick="{{ closeMobileMenu }}">New Muslims</a>
+            <a href="course-five-pillars.html" onClick="{{ closeMobileMenu }}">The 5 Pillars</a>
+            <a href="course-daily-duas.html" onClick="{{ closeMobileMenu }}">Daily Duas</a>
+          </div>
+        </div>
+        <a href="teachers.html" class="tz-drawer-link {{ teachersCls }}" onClick="{{ closeMobileMenu }}">Our Teachers</a>
+        <a href="pricing.html" class="tz-drawer-link {{ pricingCls }}" onClick="{{ closeMobileMenu }}">Pricing</a>
+        <a href="about.html" class="tz-drawer-link {{ aboutCls }}" onClick="{{ closeMobileMenu }}">About</a>
+        <a href="faqs.html" class="tz-drawer-link {{ faqsCls }}" onClick="{{ closeMobileMenu }}">FAQs</a>
+        <a href="contact.html" class="tz-drawer-link {{ contactCls }}" onClick="{{ closeMobileMenu }}">Contact</a>
+        <a href="free-class.html" class="tz-drawer-cta" onClick="{{ closeMobileMenu }}">Book a Free Class</a>
+        <a href="https://wa.me/447828702523" target="_blank" rel="noopener" class="tz-drawer-wa">Chat on WhatsApp</a>
+      </nav>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = {
+    coursesOpen: false,
+    coursesAccOpen: false,
+    mobileMenuOpen: false,
+    scrolled: false,
+  };
+  onScroll = () => {
+    const y = (document.body.scrollTop || document.scrollingElement?.scrollTop || window.pageYOffset) > 8;
+    if (y !== this.state.scrolled) this.setState({ scrolled: y });
+  };
+  componentDidMount() {
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    document.body.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    document.body.removeEventListener('scroll', this.onScroll);
+  }
+  renderVals() {
+    const active = this.props.active || '';
+    const c = (name) => (active === name ? 'is-active' : '');
+    return {
+      scrolled: this.state.scrolled,
+      scrolledCls: this.state.scrolled ? 'is-scrolled' : '',
+      coursesOpen: this.state.coursesOpen,
+      coursesAccOpen: this.state.coursesAccOpen,
+      mobileMenuOpen: this.state.mobileMenuOpen,
+      menuAriaLabel: this.state.mobileMenuOpen ? 'Close menu' : 'Open menu',
+      toggleCourses: () => this.setState((s) => ({ coursesOpen: !s.coursesOpen })),
+      toggleCoursesAcc: () => this.setState((s) => ({ coursesAccOpen: !s.coursesAccOpen })),
+      toggleMobileMenu: () => this.setState((s) => ({ mobileMenuOpen: !s.mobileMenuOpen })),
+      closeMobileMenu: () => this.setState({ mobileMenuOpen: false, coursesAccOpen: false }),
+      homeCls: c('Home'),
+      coursesCls: c('Courses'),
+      coursesWrapCls: this.state.coursesOpen ? 'is-open' : '',
+      coursesAccCls: this.state.coursesAccOpen ? 'is-open' : '',
+      teachersCls: c('Teachers'),
+      pricingCls: c('Pricing'),
+      aboutCls: c('About'),
+      faqsCls: c('FAQs'),
+      contactCls: c('Contact'),
+    };
+  }
+}
+</script>
+<script src="./whatsapp-widget.js" defer></script>
+</body>
+</html>
+
+

@@ -1,0 +1,29 @@
+:root{
+  /* Brand — deep teal, the primary identity (unchanged from v1) */
+  --teal-900:#0B3B39;--teal-800:#0D4A47;--teal-700:#0F5C56;--teal-600:#146962;--teal-500:#17847A;--teal-400:#2E9C91;--teal-300:#6FAFA7;--teal-200:#B7D4CE;--teal-100:#DCEBE8;--teal-50:#EFF6F5;
+
+  /* Warm neutrals — cream page surfaces */
+  --cream-050:#FDFBF5;--cream-50:#FBF7EE;--cream-100:#F5EEDD;--cream-200:#EDE2C8;--cream-300:#E2D3AC;
+
+  /* Ink — text scale */
+  --ink-900:#1E2422;--ink-700:#3A433F;--ink-500:#5C6660;--ink-300:#8B9490;--ink-100:#B9C0BC;
+
+  /* Gold — restrained editorial accent. 500/600 used sparingly: hairlines,
+     small numerals, the one "most families choose this" marker. */
+  --gold-600:#A97C2F;--gold-500:#C99B43;--gold-400:#D9B468;--gold-300:#E4C98F;--gold-200:#EFDDB2;--gold-100:#F7EDD7;
+
+  /* Semantic */
+  --success-600:#4B7F52;--warning-600:#B87333;--error-600:#B3423A;--error-50:#F8EAE7;
+
+  /* Surfaces */
+  --surface-page:var(--cream-50);--surface-page-raised:var(--cream-050);--surface-card:#FFFFFF;--surface-tint:var(--teal-50);--surface-sunken:var(--cream-100);--surface-inverse:var(--teal-900);
+
+  /* Text */
+  --text-primary:var(--ink-900);--text-secondary:var(--ink-500);--text-tertiary:var(--ink-300);--text-inverse:var(--cream-50);--text-inverse-secondary:var(--teal-300);--text-link:var(--teal-700);--text-link-hover:var(--teal-900);
+
+  /* Borders — hairline-first, cards get 1px not 3px */
+  --border-subtle:var(--cream-300);--border-strong:var(--teal-100);--border-hairline:rgba(11,59,57,0.10);
+
+  /* Brand roles */
+  --brand-primary:var(--teal-700);--brand-primary-hover:var(--teal-900);--brand-primary-active:var(--teal-800);--brand-accent:var(--gold-500);--brand-accent-strong:var(--gold-600);
+}

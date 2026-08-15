@@ -1,0 +1,580 @@
+/* Site-wide quality layer: intentionally restrained and component-safe. */
+:root {
+  --site-focus: #0b6b63;
+  --site-focus-ring: 0 0 0 3px rgba(11, 107, 99, 0.22);
+  --site-control-radius: 12px;
+  --site-control-transition: 160ms ease;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: rgba(201, 155, 67, 0.30); color: #041b19; }
+img, svg, iframe { max-width: 100%; }
+img { height: auto; }
+button, input, textarea, select { font: inherit; }
+button, [role="button"], a { -webkit-tap-highlight-color: transparent; }
+button:not(:disabled), [role="button"]:not([aria-disabled="true"]) { cursor: pointer; }
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 2px solid var(--site-focus);
+  outline-offset: 3px;
+  box-shadow: var(--site-focus-ring);
+}
+
+.lux-btn-gold, .tz-header-cta, .btn-gold, .btn-primary {
+  min-height: 46px;
+  letter-spacing: 0.01em;
+  transition: transform var(--site-control-transition), box-shadow var(--site-control-transition), background-color var(--site-control-transition), border-color var(--site-control-transition), color var(--site-control-transition);
+}
+.lux-btn-gold:hover, .tz-header-cta:hover, .btn-gold:hover, .btn-primary:hover { transform: translateY(-1px); }
+.lux-btn-gold:active, .tz-header-cta:active, .btn-gold:active, .btn-primary:active { transform: translateY(0); }
+
+input, textarea, select {
+  border-radius: var(--site-control-radius);
+  transition: border-color var(--site-control-transition), box-shadow var(--site-control-transition), background-color var(--site-control-transition);
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--site-focus) !important;
+  box-shadow: var(--site-focus-ring);
+}
+textarea { resize: vertical; min-height: 120px; }
+
+.lux-faq-card, details.lux-faq-card { scroll-margin-top: 116px; }
+.lux-filter-pill { min-height: 40px; }
+
+@media (max-width: 720px) {
+  .lux-btn-gold, .tz-header-cta, .btn-gold, .btn-primary { min-height: 48px; }
+  input, textarea, select { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}
+
+/* Production polish pass: responsive stability and refined interaction. */
+html, body { max-width: 100%; overflow-x: clip; }
+body { min-width: 320px; }
+:where(main, section, article, header, footer, .tz-header-inner, .tz-drawer, .tz-nav, .tz-mega, .lux-faq-card) { min-width: 0; }
+
+:where(.tz-hamburger, .tz-drawer-close, .tz-drawer-link, .tz-drawer-cta, .tz-drawer-wa) {
+  min-height: 44px;
+}
+.tz-hamburger {
+  display: none !important;
+}
+.tz-drawer-close {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1080px) {
+  .tz-hamburger {
+    display: inline-flex !important;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+  .tz-nav, .tz-header-cta, .tz-utility-bar {
+    display: none !important;
+  }
+}
+.tz-drawer { max-width: min(100%, 430px); overscroll-behavior: contain; }
+.tz-drawer-link, .tz-drawer-cta, .tz-drawer-wa {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+:where(.lux-btn-gold, .tz-header-cta, .btn-gold, .btn-primary, .tz-drawer-cta, .tz-drawer-wa) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  white-space: normal;
+}
+:where(.lux-btn-gold, .tz-header-cta, .btn-gold, .btn-primary, .tz-drawer-cta, .tz-drawer-wa):focus-visible {
+  transform: translateY(-1px);
+}
+
+:where(.lux-course-card, .lux-teacher-card, .lux-testimonial-card, .lux-story-card, .lux-faq-card) {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  :where(.lux-course-card, .lux-teacher-card, .lux-testimonial-card, .lux-story-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px rgba(4, 27, 25, 0.10);
+  }
+  main a:not(.lux-btn-gold):not(.btn-gold):not(.btn-primary):not(.tz-header-cta) {
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 1px;
+  }
+}
+:where(button, a, summary) > svg { flex: 0 0 auto; vertical-align: middle; }
+summary { cursor: pointer; }
+
+@media (max-width: 760px) {
+  :where([style*="grid-template-columns:1fr 1fr"], [style*="grid-template-columns: 1fr 1fr"], [style*="grid-template-columns:repeat(2"], [style*="grid-template-columns: repeat(2"], [style*="grid-template-columns:repeat(3"], [style*="grid-template-columns: repeat(3"]) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  :where([style*="width:"]) { max-width: 100% !important; }
+  .tz-header-inner { gap: 10px; }
+  .tz-brand-word { font-size: clamp(1.15rem, 5vw, 1.45rem); }
+  .tz-drawer { width: min(100%, 430px); }
+  .lux-faq-summary { line-height: 1.45; }
+}
+
+/* ==========================================================================
+   Universal & Homepage Motion Design System (Smooth Scroll & Entrance)
+   ========================================================================== */
+:root {
+  --site-reveal-distance: 20px;
+  --site-reveal-duration: 580ms;
+  --site-motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 1. Hero Entrance Animations (Immediate Page Load) */
+html[data-hero-motion="ready"] .site-hero-enter,
+html[data-home-motion="ready"] .home-hero-enter {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition: opacity 650ms var(--site-motion-ease), transform 650ms var(--site-motion-ease);
+  will-change: opacity, transform;
+}
+html[data-hero-motion="ready"] .site-hero-enter.is-hero-visible,
+html[data-home-motion="ready"] .home-hero-enter.is-home-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+html[data-hero-motion="ready"] .site-hero-visual-enter,
+html[data-home-motion="ready"] .home-hero-visual-enter {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0) scale(0.965);
+  transition: opacity 800ms var(--site-motion-ease) 120ms, transform 800ms var(--site-motion-ease) 120ms;
+  will-change: opacity, transform;
+}
+html[data-hero-motion="ready"] .site-hero-visual-enter.is-hero-visible,
+html[data-home-motion="ready"] .home-hero-visual-enter.is-home-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  will-change: auto;
+}
+
+/* 2. Universal Section & Block Scroll Reveal */
+html[data-section-motion="ready"] .site-reveal {
+  opacity: 0;
+  transform: translate3d(0, var(--site-reveal-distance), 0);
+  transition: opacity var(--site-reveal-duration) var(--site-motion-ease), transform var(--site-reveal-duration) var(--site-motion-ease);
+  will-change: opacity, transform;
+}
+html[data-section-motion="ready"] .site-reveal.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+/* Internal heading and copy stagger inside sections */
+html[data-section-motion="ready"] .site-reveal .site-heading-reveal {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition: opacity 500ms var(--site-motion-ease), transform 500ms var(--site-motion-ease);
+}
+html[data-section-motion="ready"] .site-reveal.is-revealed .site-heading-reveal {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+html[data-section-motion="ready"] .site-reveal .site-copy-reveal {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  transition: opacity 520ms var(--site-motion-ease) 60ms, transform 520ms var(--site-motion-ease) 60ms;
+}
+html[data-section-motion="ready"] .site-reveal.is-revealed .site-copy-reveal {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* 3. Staggered Grid & Card Entrance Animations */
+html[data-section-motion="ready"] .site-stagger-grid .site-stagger-item,
+html[data-home-motion="ready"] .home-stagger > * {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition: opacity 540ms var(--site-motion-ease), transform 540ms var(--site-motion-ease);
+  will-change: opacity, transform;
+}
+html[data-section-motion="ready"] .site-reveal.is-revealed .site-stagger-grid .site-stagger-item,
+html[data-home-motion="ready"] .home-stagger.is-home-visible > * {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+/* Stagger delay classes for cards in grids */
+html[data-section-motion="ready"] .site-reveal.is-revealed .site-stagger-grid .site-stagger-item:nth-child(1),
+html[data-home-motion="ready"] .home-stagger.is-home-visible > :nth-child(1) { transition-delay: 40ms; }
+html[data-section-motion="ready"] .site-reveal.is-revealed .site-stagger-grid .site-stagger-item:nth-child(2),
+html[data-home-motion="ready"] .home-stagger.is-home-visible > :nth-child(2) { transition-delay: 100ms; }
+html[data-section-motion="ready"] .site-reveal.is-revealed .site-stagger-grid .site-stagger-item:nth-child(3),
+html[data-home-motion="ready"] .home-stagger.is-home-visible > :nth-child(3) { transition-delay: 160ms; }
+html[data-section-motion="ready"] .site-reveal.is-revealed .site-stagger-grid .site-stagger-item:nth-child(4),
+html[data-home-motion="ready"] .home-stagger.is-home-visible > :nth-child(4) { transition-delay: 220ms; }
+html[data-section-motion="ready"] .site-reveal.is-revealed .site-stagger-grid .site-stagger-item:nth-child(5),
+html[data-home-motion="ready"] .home-stagger.is-home-visible > :nth-child(5) { transition-delay: 280ms; }
+html[data-section-motion="ready"] .site-reveal.is-revealed .site-stagger-grid .site-stagger-item:nth-child(6),
+html[data-home-motion="ready"] .home-stagger.is-home-visible > :nth-child(6) { transition-delay: 340ms; }
+
+/* 4. Targeted Homepage Section Animations */
+:root { --target-reveal-ease: cubic-bezier(0.16, 1, 0.3, 1); }
+html[data-target-motion="ready"] .home-targeted-section .home-targeted-heading,
+html[data-target-motion="ready"] .home-targeted-section .home-targeted-copy,
+html[data-target-motion="ready"] .home-targeted-section .home-targeted-card,
+html[data-target-motion="ready"] .home-targeted-section .home-targeted-media {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition: opacity 540ms var(--target-reveal-ease), transform 540ms var(--target-reveal-ease);
+}
+html[data-target-motion="ready"] .home-targeted-section.is-target-visible .home-targeted-heading,
+html[data-target-motion="ready"] .home-targeted-section.is-target-visible .home-targeted-copy,
+html[data-target-motion="ready"] .home-targeted-section.is-target-visible .home-targeted-card,
+html[data-target-motion="ready"] .home-targeted-section.is-target-visible .home-targeted-media {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+html[data-target-motion="ready"] .home-targeted-section.is-target-visible .home-targeted-copy { transition-delay: 60ms; }
+html[data-target-motion="ready"] .home-targeted-section.is-target-visible .home-targeted-card:nth-of-type(1) { transition-delay: 100ms; }
+html[data-target-motion="ready"] .home-targeted-section.is-target-visible .home-targeted-card:nth-of-type(2) { transition-delay: 160ms; }
+html[data-target-motion="ready"] .home-targeted-section.is-target-visible .home-targeted-card:nth-of-type(3) { transition-delay: 220ms; }
+html[data-target-motion="ready"] .home-targeted-section.is-target-visible .home-targeted-card:nth-of-type(4) { transition-delay: 280ms; }
+html[data-target-motion="ready"] .home-targeted-section.is-target-visible .home-targeted-media { transition-delay: 140ms; }
+
+/* 5. Luxury Micro-Interactions & Hover Micro-Transitions */
+.lux-hero-img-wrap img,
+.lux-course-card img,
+.lux-teacher-card img,
+.lux-story-card img {
+  transition: transform 600ms var(--site-motion-ease), filter 360ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .lux-hero-img-wrap:hover img,
+  .lux-course-card:hover img,
+  .lux-teacher-card:hover img {
+    transform: scale(1.025);
+    filter: saturate(1.04);
+  }
+
+  :where(.lux-course-card, .lux-teacher-card, .lux-testimonial-card, .lux-story-card, .lux-pricing-card, .lux-process-card, .lux-faq-card) {
+    transition: transform 260ms var(--site-motion-ease), box-shadow 260ms var(--site-motion-ease), border-color 260ms var(--site-motion-ease);
+  }
+  :where(.lux-course-card, .lux-teacher-card, .lux-testimonial-card, .lux-story-card, .lux-pricing-card, .lux-process-card):hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(4, 27, 25, 0.12);
+  }
+
+  .lux-btn-gold:hover, .tz-header-cta:hover, .btn-gold:hover, .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(201, 155, 67, 0.32);
+  }
+}
+
+/* Custom Curriculum Section Luxury Transitions */
+.tz-curriculum-card {
+  transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 420ms cubic-bezier(0.16, 1, 0.3, 1), border-color 420ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.tz-curriculum-card .tz-card-img {
+  transition: transform 650ms cubic-bezier(0.16, 1, 0.3, 1), filter 400ms ease !important;
+}
+.tz-curriculum-card .tz-card-arrow {
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), color 300ms ease !important;
+}
+.tz-curriculum-card .tz-card-pill {
+  transition: background-color 240ms ease, color 240ms ease, border-color 240ms ease, transform 240ms ease !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover .tz-curriculum-card,
+  .tz-curriculum-card:hover {
+    transform: translateY(-8px) !important;
+    border-color: rgba(201, 155, 67, 0.45) !important;
+    box-shadow: 0 22px 44px rgba(4, 27, 25, 0.14), 0 0 0 1px rgba(201, 155, 67, 0.25) !important;
+  }
+
+  a:hover .tz-curriculum-card .tz-card-img,
+  .tz-curriculum-card:hover .tz-card-img {
+    transform: scale(1.06) !important;
+    filter: brightness(1.08) saturate(1.06) !important;
+  }
+
+  a:hover .tz-curriculum-card .tz-card-arrow,
+  .tz-curriculum-card:hover .tz-card-arrow {
+    transform: translateX(6px) !important;
+    color: var(--lux-gold-500) !important;
+  }
+
+  a:hover .tz-curriculum-card .tz-card-pill:hover,
+  .tz-curriculum-card:hover .tz-card-pill:hover {
+    background: var(--lux-emerald-950) !important;
+    color: #F3D98B !important;
+    border-color: rgba(201, 155, 67, 0.5) !important;
+    transform: translateY(-2px) !important;
+  }
+}
+
+/* Custom Feature Cards & New to Islam Section Luxury Transitions */
+.tz-feature-card {
+  transition: transform 380ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 380ms cubic-bezier(0.16, 1, 0.3, 1), border-color 380ms cubic-bezier(0.16, 1, 0.3, 1), background-color 380ms ease !important;
+}
+.tz-feature-icon {
+  display: inline-block;
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tz-feature-card:hover {
+    transform: translateY(-6px) !important;
+    background: #FFFFFF !important;
+    border-color: rgba(201, 155, 67, 0.4) !important;
+    box-shadow: 0 18px 36px rgba(4, 27, 25, 0.10), 0 0 0 1px rgba(201, 155, 67, 0.2) !important;
+  }
+  .tz-feature-card:hover .tz-feature-icon {
+    transform: scale(1.22) translateY(-2px) !important;
+  }
+}
+
+.tz-ready-box {
+  transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 450ms cubic-bezier(0.16, 1, 0.3, 1), border-color 450ms ease !important;
+}
+@media (hover: hover) and (pointer: fine) {
+  .tz-ready-box:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(201, 155, 67, 0.6) !important;
+    box-shadow: 0 24px 48px rgba(4, 27, 25, 0.25) !important;
+  }
+}
+
+.tz-new-islam-img-wrap img {
+  transition: transform 650ms cubic-bezier(0.16, 1, 0.3, 1), filter 400ms ease !important;
+}
+@media (hover: hover) and (pointer: fine) {
+  .tz-new-islam-img-wrap:hover img {
+    transform: scale(1.03) !important;
+    filter: brightness(1.06) saturate(1.04) !important;
+  }
+}
+
+/* Footer Closing CTA Band Luxury Transitions */
+.tz-footer-cta-band {
+  transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 450ms cubic-bezier(0.16, 1, 0.3, 1), border-color 450ms ease !important;
+}
+@media (hover: hover) and (pointer: fine) {
+  .tz-footer-cta-band:hover {
+    box-shadow: 0 20px 48px rgba(4, 27, 25, 0.35) !important;
+    border-bottom-color: rgba(201, 155, 67, 0.6) !important;
+  }
+}
+
+/* Premium Gold Button Glow Transitions */
+.tz-btn-gold-glow {
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1), background 300ms ease !important;
+}
+.tz-btn-gold-glow span.tz-arrow {
+  display: inline-block;
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+  .tz-btn-gold-glow:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 30px rgba(201, 155, 67, 0.48), 0 0 0 2px rgba(243, 217, 139, 0.4) !important;
+  }
+  .tz-btn-gold-glow:hover span.tz-arrow {
+    transform: translateX(5px) !important;
+  }
+}
+
+
+
+
+
+/* 6. Responsive Adjustments */
+@media (max-width: 760px) {
+  :root { --site-reveal-distance: 12px; --site-reveal-duration: 440ms; }
+  html[data-hero-motion="ready"] .site-hero-enter,
+  html[data-home-motion="ready"] .home-hero-enter { transform: translate3d(0, 14px, 0); transition-duration: 480ms; }
+  html[data-hero-motion="ready"] .site-hero-visual-enter,
+  html[data-home-motion="ready"] .home-hero-visual-enter { transform: translate3d(0, 12px, 0) scale(0.98); transition-duration: 520ms; }
+}
+
+/* 7. Reduced Motion Fallback */
+@media (prefers-reduced-motion: reduce) {
+  html[data-section-motion="ready"] .site-reveal,
+  html[data-section-motion="ready"] .site-reveal.is-revealed,
+  html[data-section-motion="ready"] .site-reveal .site-heading-reveal,
+  html[data-section-motion="ready"] .site-reveal .site-copy-reveal,
+  html[data-section-motion="ready"] .site-stagger-grid .site-stagger-item,
+  html[data-hero-motion="ready"] .site-hero-enter,
+  html[data-hero-motion="ready"] .site-hero-enter.is-hero-visible,
+  html[data-hero-motion="ready"] .site-hero-visual-enter,
+  html[data-hero-motion="ready"] .site-hero-visual-enter.is-hero-visible,
+  html[data-home-motion="ready"] .home-hero-enter,
+  html[data-home-motion="ready"] .home-hero-enter.is-home-visible,
+  html[data-home-motion="ready"] .home-hero-visual-enter,
+  html[data-home-motion="ready"] .home-hero-visual-enter.is-hero-visible,
+  html[data-home-motion="ready"] .home-stagger > *,
+  html[data-home-motion="ready"] .home-stagger.is-home-visible > *,
+  html[data-target-motion="ready"] .home-targeted-section .home-targeted-heading,
+  html[data-target-motion="ready"] .home-targeted-section .home-targeted-copy,
+  html[data-target-motion="ready"] .home-targeted-section .home-targeted-card,
+  html[data-target-motion="ready"] .home-targeted-section .home-targeted-media {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* =====================================================
+   Floating WhatsApp Button — site-wide
+   ===================================================== */
+#tz-wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  text-decoration: none;
+}
+
+/* Pulse ring */
+#tz-wa-float::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.35);
+  animation: tz-wa-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes tz-wa-pulse {
+  0%   { transform: scale(1); opacity: 0.8; }
+  70%  { transform: scale(1.55); opacity: 0; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
+/* Main bubble */
+#tz-wa-float .tz-wa-bubble {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.22s cubic-bezier(.34,1.56,.64,1),
+              box-shadow 0.22s ease;
+  flex-shrink: 0;
+}
+
+#tz-wa-float:hover .tz-wa-bubble {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 10px 32px rgba(37, 211, 102, 0.55), 0 4px 12px rgba(0,0,0,0.22);
+}
+
+#tz-wa-float .tz-wa-bubble svg {
+  width: 32px;
+  height: 32px;
+  fill: #ffffff;
+  display: block;
+}
+
+/* Tooltip label */
+#tz-wa-float .tz-wa-label {
+  position: absolute;
+  right: 72px;
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: #1c1c1e;
+  color: #ffffff;
+  font-family: 'Karla', 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 7px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+
+#tz-wa-float .tz-wa-label::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right: 0;
+  border-left-color: #1c1c1e;
+}
+
+#tz-wa-float:hover .tz-wa-label,
+#tz-wa-float:focus-visible .tz-wa-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Notification dot */
+#tz-wa-float .tz-wa-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  background: #ff3b30;
+  border: 2.5px solid #ffffff;
+  border-radius: 50%;
+  animation: tz-wa-dot-fade 3s ease-in-out 2s forwards;
+}
+
+@keyframes tz-wa-dot-fade {
+  0%   { opacity: 1; }
+  100% { opacity: 0; transform: scale(0); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  #tz-wa-float {
+    bottom: 20px;
+    right: 18px;
+  }
+  #tz-wa-float .tz-wa-bubble {
+    width: 54px;
+    height: 54px;
+  }
+  #tz-wa-float .tz-wa-bubble svg {
+    width: 28px;
+    height: 28px;
+  }
+  #tz-wa-float .tz-wa-label {
+    display: none;
+  }
+}
+
+/* Reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  #tz-wa-float::before { animation: none; }
+  #tz-wa-float .tz-wa-dot { animation: none; }
+}

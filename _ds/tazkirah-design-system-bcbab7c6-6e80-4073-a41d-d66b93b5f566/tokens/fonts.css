@@ -1,0 +1,12 @@
+/* Brand type — Lora (editorial serif) + Karla (humanist sans).
+   Bundled with font-display: swap for instant text render and zero render-blocking FOIT.
+   Arabic fallbacks keep Urdu/Arabic text graceful (Amiri + Noto Naskh). */
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,500;0,600;0,700;1,600&display=swap');
+
+:root{
+  --font-serif:'Lora',Georgia,'Times New Roman',serif;
+  --font-sans:'Karla',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --font-arabic:'Amiri','Noto Naskh Arabic','Scheherazade New',var(--font-sans);
+}
+
