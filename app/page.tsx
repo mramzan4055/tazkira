@@ -10,33 +10,10 @@ const courses = [
 
 const stats = ['1:1 live classes', 'Male & female tutors', 'Flexible time zones', 'Parent progress notes'];
 const steps = ['Free level assessment', 'Personal learning roadmap', 'Matched certified teacher', 'Weekly progress rhythm'];
-const nav = [
-  ['Courses', '/courses'],
-  ['How we teach', '/how-we-teach'],
-  ['Teachers', '/teachers'],
-  ['Pricing', '/pricing'],
-];
-
-function Header() {
-  return (
-    <header className="siteHeader">
-      <Link className="brand" href="/" aria-label="Tazkirah home">
-        <Image src="/assets/tazkirah-mark.png" alt="" width={46} height={56} priority />
-        <span>Tazkirah</span>
-      </Link>
-      <nav aria-label="Primary navigation">
-        {nav.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
-      </nav>
-      <Link className="headerCta" href="/free-class">Book free class</Link>
-    </header>
-  );
-}
 
 export default function Home() {
   return (
     <main>
-      <Header />
-
       <section className="hero shell">
         <div className="heroCopy">
           <span className="pill">Online Quran academy for families</span>
@@ -59,7 +36,7 @@ export default function Home() {
 
       <section className="shell introGrid" aria-label="Tazkirah highlights">
         {['Safeguarded online classes', 'Personal pace, clear milestones', 'Global schedules for busy homes'].map((item) => (
-          <article key={item}><span>✦</span><h3>{item}</h3><p>Premium support, thoughtful onboarding and a polished student journey from first trial to long-term mastery.</p></article>
+          <article key={item}><span>✓</span><h3>{item}</h3><p>Premium support, thoughtful onboarding and a polished student journey from first trial to long-term mastery.</p></article>
         ))}
       </section>
 
