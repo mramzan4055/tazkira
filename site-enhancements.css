@@ -578,3 +578,157 @@ html[data-target-motion="ready"] .home-targeted-section.is-target-visible .home-
   #tz-wa-float::before { animation: none; }
   #tz-wa-float .tz-wa-dot { animation: none; }
 }
+
+/* Design repair pass: keep generated/static pages visually stable without touching page content. */
+x-dc,
+helmet {
+  display: contents;
+}
+
+/* Header balance: keep the brand anchored left, navigation centered, and CTA right on desktop. */
+.tz-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(253, 251, 245, 0.94);
+  border-bottom: 1px solid rgba(11, 59, 57, 0.08);
+  backdrop-filter: blur(14px);
+}
+.tz-header-inner {
+  min-height: 76px;
+}
+.tz-brand {
+  order: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: max-content;
+  color: var(--teal-900, #0b3b39);
+  text-decoration: none;
+}
+.tz-brand-mark {
+  width: 44px;
+  height: 54px;
+  object-fit: contain;
+}
+.tz-brand-word {
+  font: 700 clamp(1.2rem, 2vw, 1.55rem)/1 var(--font-serif, Georgia, serif);
+  letter-spacing: -0.02em;
+}
+.tz-nav {
+  order: 2;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+.tz-header-cta {
+  order: 3;
+  flex: 0 0 auto;
+}
+
+/* Hero polish: preserve legibility over image slides and prevent cramped mobile controls. */
+#lux-hero-slider-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(201, 155, 67, 0.16), transparent 32%),
+    linear-gradient(90deg, rgba(4, 27, 25, 0.96) 0%, rgba(4, 27, 25, 0.82) 42%, rgba(4, 27, 25, 0.34) 72%, rgba(4, 27, 25, 0.12) 100%);
+}
+#lux-hero-slider-bg > div:last-child {
+  opacity: 0.72;
+}
+.lux-hero-badge {
+  max-width: 100%;
+  line-height: 1.35;
+}
+.lux-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill, 999px);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.08);
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+.lux-btn-outline:hover {
+  color: #fff;
+  border-color: rgba(243, 217, 139, 0.72);
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-1px);
+}
+
+/* Card grids and visual rhythm: consistent heights, cleaner spacing, and robust wrapping. */
+.lux-section-header {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+.lux-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--lux-gold-600, #9e7428);
+  font: 800 12px/1.2 var(--font-sans, system-ui, sans-serif);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.lux-section-title {
+  margin-bottom: 14px;
+  color: var(--lux-emerald-900, #072c2a);
+}
+.lux-section-desc {
+  color: var(--ink-500, #5c6660);
+  font: var(--text-body-lg, 400 18px/1.6 system-ui, sans-serif);
+}
+.lux-course-card,
+.lux-strip-item,
+.lux-teacher-card,
+.lux-story-card,
+.lux-faq-card {
+  height: 100%;
+}
+.tz-card-img {
+  transform: scale(1.001);
+  transition: transform 300ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .lux-course-card:hover .tz-card-img {
+    transform: scale(1.045);
+  }
+}
+
+@media (max-width: 1080px) {
+  .tz-header {
+    position: sticky;
+  }
+  .tz-header-inner {
+    min-height: 66px;
+  }
+  .tz-brand {
+    order: 2;
+    margin-inline: auto;
+  }
+  .tz-hamburger {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  #lux-hero-slider-bg::after {
+    background: linear-gradient(180deg, rgba(4, 27, 25, 0.92) 0%, rgba(4, 27, 25, 0.96) 100%);
+  }
+  .lux-hero-badge {
+    font-size: 11px;
+    padding-inline: 12px;
+  }
+  .lux-section-header {
+    margin-bottom: 28px;
+    text-align: left;
+  }
+}
